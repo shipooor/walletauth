@@ -6,7 +6,7 @@ If you discover a security vulnerability in `@walletauth/server`, please report 
 
 **Do NOT open a public GitHub issue for security vulnerabilities.**
 
-Instead, use [GitHub's private vulnerability reporting](https://github.com/shipooor/walletauth-server/security/advisories/new). You can also DM [@shipooor](https://x.com/shipooor) on X.
+Instead, use [GitHub's private vulnerability reporting](https://github.com/shipooor/walletauth/security/advisories/new). You can also DM [@shipooor](https://x.com/shipooor) on X.
 
 Include:
 - Description of the vulnerability
