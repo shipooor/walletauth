@@ -41,11 +41,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/walletauth/server.git"
+    "url": "git+https://github.com/shipooor/walletauth-server.git"
   },
   "homepage": "https://walletauth.shipooor.xyz",
   "bugs": {
-    "url": "https://github.com/walletauth/server/issues"
+    "url": "https://github.com/shipooor/walletauth-server/issues"
   },
   "publishConfig": {
     "access": "public"
