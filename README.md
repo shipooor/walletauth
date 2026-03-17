@@ -298,3 +298,11 @@ Common issues when auth fails:
 - [SIWE (EIP-4361)](https://docs.siwe.xyz/) — session-based, human-facing login
 - [ERC-8128](https://eips.ethereum.org/EIPS/eip-8128) — per-request HTTP signing (draft)
 - [x402](https://www.x402.org/) — payment auth protocol (complementary)
+
+## Author
+
+**shipped by [shipooor](https://shipooor.xyz)** — [X/Twitter](https://x.com/shipooor) · [GitHub](https://github.com/shipooor)
+
+## License
+
+MIT — see [LICENSE](./LICENSE)
