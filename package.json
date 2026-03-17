@@ -1,6 +1,6 @@
 {
   "name": "@shipooor/walletauth",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Your wallet is your API key. Agent-native auth for APIs.",
   "type": "module",
   "main": "./dist/index.cjs",
