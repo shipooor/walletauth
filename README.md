@@ -23,25 +23,18 @@ No registration. No API keys. No rotation.
 
 ## How it works
 
-```
-┌─────────────────────────────────┐
-│  AI Agent (any framework)       │
-│  Has a wallet / keypair         │
-└──────────┬──────────────────────┘
-           │ 1. POST /auth/challenge { address }
-           │ 2. Server returns { nonce, challenge, expiresAt }
-           │ 3. Agent signs nonce with private key
-           │ 4. POST /auth/verify { address, signature, challenge }
-           │ 5. Server verifies HMAC + wallet signature → JWT
-           ↓
-┌──────────────────────────────────┐
-│  Your API + @shipooor/walletauth   │
-│                                   │
-│  ├─ Stateless challenge/verify   │
-│  ├─ HMAC-signed challenges       │
-│  ├─ Signature verification       │
-│  └─ JWT issuance & validation    │
-└───────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    participant Agent as AI Agent (wallet)
+    participant API as Your API + @shipooor/walletauth
+
+    Agent->>API: POST /auth/challenge { address }
+    API-->>Agent: { nonce, challenge, expiresAt }
+    Note over Agent: Signs nonce with private key
+    Agent->>API: POST /auth/verify { address, signature, challenge }
+    Note over API: Verifies HMAC + wallet signature
+    API-->>Agent: { token: "JWT..." }
+    Agent->>API: GET /api/data (Bearer token)
 ```
 
 ### Stateless by design
