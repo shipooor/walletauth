@@ -1,5 +1,5 @@
 {
-  "name": "@walletauth/server",
+  "name": "@shipooor/walletauth",
   "version": "0.1.0",
   "description": "Your wallet is your API key. Agent-native auth for APIs.",
   "type": "module",

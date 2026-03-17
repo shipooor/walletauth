@@ -1,4 +1,4 @@
-# @walletauth/server
+# @shipooor/walletauth
 
 Your wallet is your API key. Agent-native auth for APIs.
 
@@ -35,7 +35,7 @@ No registration. No API keys. No rotation.
            │ 5. Server verifies HMAC + wallet signature → JWT
            ↓
 ┌──────────────────────────────────┐
-│  Your API + @walletauth/server   │
+│  Your API + @shipooor/walletauth   │
 │                                   │
 │  ├─ Stateless challenge/verify   │
 │  ├─ HMAC-signed challenges       │
@@ -51,7 +51,7 @@ Challenges are HMAC-signed — the server verifies its own signature on return. 
 ## Install
 
 ```bash
-npm install @walletauth/server
+npm install @shipooor/walletauth
 ```
 
 ## Core API
@@ -65,7 +65,7 @@ import {
   issueToken,
   validateToken,
   verifiers,
-} from '@walletauth/server';
+} from '@shipooor/walletauth';
 ```
 
 | Function | Description |
@@ -102,7 +102,7 @@ Each verifier is tried in order. First `true` wins. Cryptographically safe — a
 
 ```typescript
 import express from 'express';
-import { createChallenge, verifySignature, issueToken, validateToken, verifiers } from '@walletauth/server';
+import { createChallenge, verifySignature, issueToken, validateToken, verifiers } from '@shipooor/walletauth';
 
 const app = express();
 app.use(express.json());
@@ -144,7 +144,7 @@ app.get('/api/data', authMiddleware, (req, res) => {
 
 ```typescript
 import { Injectable, CanActivate, ExecutionContext, createParamDecorator } from '@nestjs/common';
-import { validateToken } from '@walletauth/server';
+import { validateToken } from '@shipooor/walletauth';
 
 @Injectable()
 export class WalletAuthGuard implements CanActivate {
@@ -238,14 +238,14 @@ Core is framework-agnostic. Optional adapter packages may be published if needed
 
 | Package | Status |
 |---|---|
-| `@walletauth/server` | Core library (pure functions + verifiers) |
-| `@walletauth/express` | Planned — Express middleware wrapper |
-| `@walletauth/nestjs` | Planned — Guard + decorator |
-| `@walletauth/fastify` | Planned — Fastify plugin |
+| `@shipooor/walletauth` | Core library (pure functions + verifiers) |
+| `@shipooor/walletauth-express` | Planned — Express middleware wrapper |
+| `@shipooor/walletauth-nestjs` | Planned — Guard + decorator |
+| `@shipooor/walletauth-fastify` | Planned — Fastify plugin |
 
 ## Size
 
-| | @walletauth/server | ethers.js (for verifyMessage) |
+| | @shipooor/walletauth | ethers.js (for verifyMessage) |
 |---|---|---|
 | Library size | ~7KB ESM | 500KB+ |
 | Runtime deps | 3 (`@noble/curves`, `@noble/hashes`, `jose`) | Everything bundled |
